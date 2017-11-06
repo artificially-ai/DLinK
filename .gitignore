@@ -101,3 +101,6 @@ ENV/
 .mypy_cache/
 
 **/MNIST_data
+**/logs
+**/kaggle
+**/submission*
