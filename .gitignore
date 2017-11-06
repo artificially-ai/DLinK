@@ -104,3 +104,6 @@ ENV/
 **/logs
 **/kaggle
 **/submission*
+
+**/checkpoint
+**/mnist_intermediate*
