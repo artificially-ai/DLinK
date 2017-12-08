@@ -108,3 +108,4 @@ ENV/
 **/checkpoint
 **/mnist_intermediate*
 **/.DS_Store
+**/17flowers
