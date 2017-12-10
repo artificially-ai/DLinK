@@ -110,3 +110,4 @@ ENV/
 **/.DS_Store
 **/17flowers
 **/model_output
+*.h5
