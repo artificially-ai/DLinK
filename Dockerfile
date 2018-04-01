@@ -8,5 +8,8 @@ USER $NB_USER
 RUN conda install -c conda-forge tensorflow -y && \
     conda install -c conda-forge numpy keras nltk gensim -y
 
-# install Reinforcement Learning packages:
+# Install Reinforcement Learning packages:
 RUN pip install gym==0.9.4
+
+# Install Keras Kontrib
+RUN pip install git+https://www.github.com/keras-team/keras-contrib.git
