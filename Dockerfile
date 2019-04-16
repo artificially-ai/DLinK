@@ -1,20 +1,18 @@
-FROM jupyter/scipy-notebook
+FROM jupyter/datascience-notebook
 
 MAINTAINER Wilder Rodrigues (wilder.rodrigues@ekholabs.ai)
 
 USER $NB_USER
 
-RUN pip install --upgrade pip
-RUN conda update -n base conda
-
 # Install TensorFlow
-RUN conda install -c conda-forge tensorflow==1.9.0 -y && \
-    conda install -c conda-forge numpy keras nltk gensim -y
+RUN conda install -c conda-forge tensorflow -y && \
+    conda install -c conda-forge numpy keras nltk gensim opencv -y
 
 # Install Reinforcement Learning packages:
-RUN pip install gym==0.9.4
+RUN pip install gym==0.9.4 pydub plaidml-keras plaidbench
 
-RUN pip install --upgrade tf_nightly
+# Install Keras Contrib
+RUN pip install git+https://www.github.com/keras-team/keras-contrib.git
 
-# Install Keras Kontrib with bug fix
-RUN pip install git+https://www.github.com/ekholabs/keras-contrib.git@fix/import-normilize_data_format
+RUN pip install npm jupyterlab
+RUN jupyter serverextension enable --py jupyterlab

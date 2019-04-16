@@ -1,0 +1,15 @@
+version: '3'
+services:
+  dl-stack:
+    image: "ekholabs/deeplearning-stack"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: "deeplearning-stack"
+    working_dir: "/DLinK"
+    volumes:
+      - .:/DLinK
+    expose:
+      - "8888"
+    ports:
+      - "8888:8888"
